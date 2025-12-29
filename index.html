@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== BASIC META ========== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahima Studio 369 – Capturing Moments, Creating Memories. Premium wedding & portrait photography by Vivek Kushwaha.">
+    <meta name="keywords" content="wedding photography, pre-wedding shoot, candid photographer, Mahima Studio 369, Vivek Kushwaha, Indian wedding">
+    <meta name="author" content="Mahima Studio 369">
+    <title>Mahima Studio 369 | Premium Wedding & Portrait Photography</title>
+
+    <!-- ========== FONTS & ICONS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ========== GLIGHTBOX ========== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
+
+    <style>
+    /* ---------- ROOT & THEME ---------- */
+    :root{
+
+        --clr-dark:#111;
+
+        --clr-light:#fafafa;
+
+        --clr-gold:#c9a34e;
+
+        --clr-gray:#444;
+
+        --clr-overlay:rgba(0,0,0,.55);
+
+        --font-serif:'Playfair Display',serif;
+
+        --font-sans:'Poppins',sans-serif;
+
+        --transition:.4s ease;
+
+    }
+
+    *{
+
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    html{
+        scroll-behavior:smooth;
+    }
+    body{
+        font-family:var(--font-sans);
+        background:var(--clr-light);
+        color:var(--clr-dark);
+        line-height:1.6;
+    }
+    img{
+        max-width:100%;
+        display:block;
+    }
+    a{
+        text-decoration:none;
+        color:inherit;
+    }
+    ul{
+        list-style:none;
+    }
+    .container{
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+    }
+    .section{
+        padding:80px 0;
+    }
+    .section-title{
+        font-family:var(--font-serif);
+        font-size:2.8rem;
+        text-align:center;
+        margin-bottom:3.5rem;
+        letter-spacing:1px;
+        position:relative;
+    }
+    .section-title::after{
+        content:'';
+        width:80px;
+        height:3px;
+        background:var(--clr-gold);
+        position:absolute;
+        bottom:-15px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+    .btn{
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        background:var(--clr-gold);
+        color:#fff;
+        padding:14px 32px;
+        border-radius:30px;
+        font-weight:500;
+        transition:var(--transition);
+        box-shadow:0 8px 20px rgba(201,163,78,.35);
+    }
+    .btn:hover{
+        background:#b08c3c;
+        transform:translateY(-3px);
+        box-shadow:0 12px 25px rgba(201,163,78,.45);
+    }
+    .btn-outline{
+        background:transparent;
+        border:2px solid var(--clr-gold);
+        color:var(--clr-gold);
+        box-shadow:none;
+    }
+    .btn-outline:hover{
+        background:var(--clr-gold);
+        color:#fff;
+    }
+
+    /* ---------- HEADER ---------- */
+    header{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:1000;
+        background:rgba(17,17,17,.85);
+        backdrop-filter:blur(10px);
+        transition:var(--transition);
+    }
+    .nav{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:18px 0;
+    }
+    .logo{
+        font-family:var(--font-serif);
+        font-size:1.6rem;
+        color:var(--clr-gold);
+        letter-spacing:1px;
+    }
+    .nav-links{
+        display:flex;
+        gap:2.2rem;
+    }
+    .nav-links a{
+        color:var(--clr-light);
+        font-weight:400;
+        font-size:.95rem;
+        position:relative;
+    }
+    .nav-links a::after{
+        content:'';
+        position:absolute;
+        left:0;
+        bottom:-6px;
+        width:0;
+        height:2px;
+        background:var(--clr-gold);
+        transition:var(--transition);
+    }
+    .nav-links a:hover::after{
+        width:100%;
+    }
+    .hamburger{
+        display:none;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+    }
+    .hamburger span{
+        width:26px;
+        height:3px;
+        background:var(--clr-light);
+        transition:var(--transition);
+    }
+
+    /* ---------- HERO ---------- */
+    .hero{
+        height:100vh;
+        background:url('https://source.unsplash.com/random/1920x1080/?wedding,couple') center/cover no-repeat;
+        position:relative;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        color:#fff;
+    }
+    .hero::before{
+        content:'';
+        position:absolute;
+        inset:0;
+        background:var(--clr-overlay);
+    }
+    .hero-content{
+        position:relative;
+        z-index:2;
+        max-width:800px;
+        padding:0 1rem;
+    }
+    .hero-content h1{
+        font-family:var(--font-serif);
+        font-size:4rem;
+        letter-spacing:1.5px;
+        margin-bottom:1.2rem;
+        animation:fadeInUp 1s ease;
+    }
+    .hero-content p{
+        font-size:1.3rem;
+        margin-bottom:2.5rem;
+        animation:fadeInUp 1s ease .3s both;
+    }
+    .hero-buttons{
+        display:flex;
+        gap:1.2rem;
+        justify-content:center;
+        flex-wrap:wrap;
+        animation:fadeInUp 1s ease .6s both;
+    }
+    @keyframes fadeInUp{
+        from{opacity:0;transform:translateY(30px);}
+        to{opacity:1;transform:translateY(0);}
+    }
+
+    /* ---------- INSTAGRAM PREVIEW ---------- */
+    .insta-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+        gap:8px;
+        margin-top:2rem;
+    }
+    .insta-grid img{
+        height:180px;
+        object-fit:cover;
+        transition:var(--transition);
+        cursor:pointer;
+    }
+    .insta-grid img:hover{
+        transform:scale(1.05);
+        box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-wrapper{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:3rem;
+        align-items:center;
+    }
+    .about-img img{
+        border-radius:10px;
+        box-shadow:0 15px 30px rgba(0,0,0,.2);
+    }
+    .about-text h3{
+        font-family:var(--font-serif);
+        font-size:2rem;
+        margin-bottom:1rem;
+    }
+    .about-text p{
+        margin-bottom:1.2rem;
+        color:var(--clr-gray);
+    }
+    .signature{
+        margin-top:1.5rem;
+        font-family:var(--font-serif);
+        font-size:1.4rem;
+        color:var(--clr-gold);
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:2.5rem;
+    }
+    .service-card{
+        background:#fff;
+        border-radius:10px;
+        overflow:hidden;
+        box-shadow:0 8px 25px rgba(0,0,0,.08);
+        transition:var(--transition);
+    }
+    .service-card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 15px 35px rgba(0,0,0,.15);
+    }
+    .service-img{
+        height:200px;
+        background:url('https://source.unsplash.com/random/600x400/?wedding,ring') center/cover no-repeat;
+    }
+    .service-info{
+        padding:1.8rem;
+    }
+    .service-info h4{
+        font-family:var(--font-serif);
+        font-size:1.4rem;
+        margin-bottom:.6rem;
+    }
+    .service-info p{
+        color:var(--clr-gray);
+        font-size:.95rem;
+    }
+
+    /* ---------- PORTFOLIO ---------- */
+    .portfolio-filters{
+        display:flex;
+        justify-content:center;
+        gap:1rem;
+        margin-bottom:2.5rem;
+        flex-wrap:wrap;
+    }
+    .filter{
+        padding:8px 20px;
+        border:1px solid var(--clr-gold);
+        border-radius:30px;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:var(--transition);
+    }
+    .filter.active,.filter:hover{
+        background:var(--clr-gold);
+        color:#fff;
+    }
+    .portfolio-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:12px;
+    }
+    .portfolio-item{
+        position:relative;
+        overflow:hidden;
+        border-radius:8px;
+        cursor:pointer;
+    }
+    .portfolio-item img{
+        height:280px;
+        object-fit:cover;
+        transition:var(--transition);
+    }
+    .portfolio-item:hover img{
+        transform:scale(1.08);
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact-wrapper{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:3rem;
+    }
+    .contact-form .form-group{
+        margin-bottom:1.2rem;
+    }
+    .contact-form input,.contact-form textarea{
+        width:100%;
+        padding:14px 18px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:1rem;
+        font-family:var(--font-sans);
+        resize:none;
+    }
+    .contact-form textarea{
+        min-height:160px;
+    }
+    .map-placeholder{
+        background:#eaeaea;
+        height:100%;
+        min-height:400px;
+        border-radius:10px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:var(--clr-gray);
+        font-size:1.2rem;
+    }
+    .whatsapp-float{
+        position:fixed;
+        bottom:25px;
+        right:25px;
+        width:60px;
+        height:60px;
+        background:#25D366;
+        color:#fff;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:1.8rem;
+        box-shadow:0 5px 15px rgba(37,211,102,.45);
+        transition:var(--transition);
+        z-index:999;
+    }
+    .whatsapp-float:hover{
+        transform:scale(1.1);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer{
+        background:var(--clr-dark);
+        color:var(--clr-light);
+        text-align:center;
+        padding:3rem 2rem 2rem;
+    }
+    .footer-social a{
+        margin:0 .6rem;
+        font-size:1.4rem;
+        color:var(--clr-gold);
+        transition:var(--transition);
+    }
+    .footer-social a:hover{
+        color:#fff;
+    }
+
+    /* ---------- ADMIN ---------- */
+    .admin-login{
+        position:fixed;
+        bottom:90px;
+        right:25px;
+        background:rgba(17,17,17,.85);
+        color:var(--clr-gold);
+        padding:10px 18px;
+        border-radius:30px;
+        font-size:.85rem;
+        z-index:998;
+        transition:var(--transition);
+    }
+    .admin-login:hover{
+        background:var(--clr-gold);
+        color:#fff;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:992px){
+        .about-wrapper,.contact-wrapper{
+            grid-template-columns:1fr;
+        }
+    }
+    @media(max-width:768px){
+        .nav-links{
+            position:fixed;
+            top:0;
+            right:-100%;
+            width:70%;
+            height:100vh;
+            background:var(--clr-dark);
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:2.5rem;
+            transition:var(--transition);
+        }
+        .nav-links.active{
+            right:0;
+        }
+        .hamburger{
+            display:flex;
+        }
+        .hero-content h1{
+            font-size:2.8rem;
+        }
+        .hero-buttons{
+            flex-direction:column;
+            width:200px;
+            margin:auto;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+    <div class="container nav">
+        <a href="#" class="logo">Mahima Studio 369</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Capturing Moments, Creating Memories</h1>
+        <p>Premium Wedding & Portrait Photography</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn">Book a Shoot</a>
+            <a href="https://wa.me/917754037912" target="_blank" class="btn btn-outline">WhatsApp Us</a>
+        </div>
+
+        <!-- Instagram Preview -->
+        <div class="insta-grid">
+            <img src="https://source.unsplash.com/random/400x400/?indian,wedding,1" alt="Insta-1" loading="lazy">
+            <img src="https://source.unsplash.com/random/400x400/?bride,couple,2" alt="Insta-2" loading="lazy">
+            <img src="https://source.unsplash.com/random/400x400/?wedding,ritual,3" alt="Insta-3" loading="lazy">
+            <img src="https://source.unsplash.com/random/400x400/?groom,portrait,4" alt="Insta-4" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-wrapper">
+            <div class="about-img">
+                <img src="https://source.unsplash.com/random/600x500/?photographer,camera" alt="Vivek Kushwaha">
+            </div>
+            <div class="about-text">
+                <h3>Mahima Studio 369</h3>
+                <p>With years of experience in wedding and portrait photography, we specialize in turning your precious moments into timeless stories. Our creative approach blends candid emotions with artistic composition, delivering memories that last forever.</p>
+                <p><strong>Owner:</strong> Vivek Kushwaha</p>
+                <p><strong>Patron:</strong> Ravendra Singh</p>
+                <div class="signature">Mahima Studio 369</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="section" style="background:#f9f9f9;">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?pre-wedding');"></div>
+                <div class="service-info">
+                    <h4>Pre-Wedding Shoot</h4>
+                    <p>Romantic outdoor & themed pre-wedding photography that reflects your unique love story.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?wedding,ceremony');"></div>
+                <div class="service-info">
+                    <h4>Wedding Shoot</h4>
+                    <p>Complete wedding event coverage with candid & traditional photography styles.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?portrait,studio');"></div>
+                <div class="service-info">
+                    <h4>Indoor Studio</h4>
+                    <p>Professional studio portraits with controlled lighting and creative backdrops.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?outdoor,photography');"></div>
+                <div class="service-info">
+                    <h4>Outdoor Location</h4>
+                    <p>Scenic outdoor shoots at picturesque locations for memorable albums.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?album,design');"></div>
+                <div class="service-info">
+                    <h4>Album Designing</h4>
+                    <p>Premium wedding albums with custom designs and cinematic video highlights.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image:url('https://source.unsplash.com/random/600x400/?candid,photography');"></div>
+                <div class="service-info">
+                    <h4>Candid Photography</h4>
+                    <p>Natural, unposed moments captured discreetly during your special events.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PORTFOLIO ========== -->
+<section id="portfolio" class="section">
+    <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-filters">
+            <span class="filter active" data-filter="all">All</span>
+            <span class="filter" data-filter="wedding">Wedding</span>
+            <span class="filter" data-filter="pre-wedding">Pre-Wedding</span>
+            <span class="filter" data-filter="outdoor">Outdoor</span>
+            <span class="filter" data-filter="indoor">Indoor</span>
+            <span class="filter" data-filter="candid">Candid</span>
+        </div>
+        <div class="portfolio-grid">
+            <!-- Wedding -->
+            <a href="https://source.unsplash.com/random/1200x800/?indian,wedding" class="portfolio-item glightbox" data-gallery="portfolio" data-type="wedding">
+                <img src="https://source.unsplash.com/random/600x600/?indian,wedding,1" alt="Wedding 1" loading="lazy">
+            </a>
+            <a href="https://source.unsplash.com/random/1200x800/?bride,couple" class="portfolio-item glightbox" data-gallery="portfolio" data-type="pre-wedding">
+                <img src="https://source.unsplash.com/random/600x600/?bride,couple,1" alt="Pre-Wedding 1" loading="lazy">
+            </a>
+            <a href="https://source.unsplash.com/random/1200x800/?wedding,ritual" class="portfolio-item glightbox" data-gallery="portfolio" data-type="wedding">
+                <img src="https://source.unsplash.com/random/600x600/?wedding,ritual,1" alt="Wedding 2" loading="lazy">
+            </a>
+            <a href="https://source.unsplash.com/random/1200x800/?groom,portrait" class="portfolio-item glightbox" data-gallery="portfolio" data-type="indoor">
+                <img src="https://source.unsplash.com/random/600x600/?groom,portrait,1" alt="Indoor 1" loading="lazy">
+            </a>
+            <a href="https://source.unsplash.com/random/1200x800/?outdoor,couple" class="portfolio-item glightbox" data-gallery="portfolio" data-type="outdoor">
+                <img src="https://source.unsplash.com/random/600x600/?outdoor,couple,1" alt="Outdoor 1" loading="lazy">
+            </a>
+            <a href="https://source.unsplash.com/random/1200x800/?candid,wedding" class="portfolio-item glightbox" data-gallery="portfolio" data-type="candid">
+                <img src="https://source.unsplash.com/random/600x600/?candid,wedding,1" alt="Candid 1" loading="lazy">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section" style="background:#f9f9f9;">
+    <div class="container">
+        <h2 class="section-title">Book a Shoot</h2>
+        <div class="contact-wrapper">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message / Event Details" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="map-placeholder">
+                <p>Google Map Location<br>Varanasi, Uttar Pradesh</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <p>&copy; <span id="year"></span> Mahima Studio 369. All rights reserved.</p>
+    <div class="footer-social">
+        <a href="https://www.instagram.com/mahimastudio369/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/917754037912" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/917754037912" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ========== ADMIN LOGIN ========== -->
+<a href="admin.html" class="admin-login">Admin Login</a>
+
+<!-- ========== SCRIPTS ========== -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
+<script>
+    // Mobile Nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('active');
+    });
+
+    // Portfolio Filter
+    const filters = document.querySelectorAll('.filter');
+    const items = document.querySelectorAll('.portfolio-item');
+    filters.forEach(f=>{
+        f.addEventListener('click',()=>{
+            filters.forEach(x=>x.classList.remove('active'));
+            f.classList.add('active');
+            const type = f.dataset.filter;
+            items.forEach(i=>{
+                if(type==='all' || i.dataset.type===type){
+                    i.style.display='block';
+                }else{
+                    i.style.display='none';
+                }
+            });
+        });
+    });
+
+    // Lightbox
+    const lightbox = GLightbox({
+        selector:'.glightbox',
+        touchNavigation:true,
+        loop:true,
+        autoplayVideos:true
+    });
+
+    // Form Submit
+    function handleSubmit(e){
+        e.preventDefault();
+        alert('Thank you! We will contact you soon.');
+        e.target.reset();
+    }
+
+    // Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lazy Load Images (Native)
+    if('loading' in HTMLImageElement.prototype){
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img=>img.src=img.src);
+    }
+
+    // Navbar Scroll
+    window.addEventListener('scroll',()=>{
+        document.querySelector('header').style.background = window.scrollY>50?'rgba(17,17,17,.98)':'rgba(17,17,17,.85)';
+    });
+</script>
+</body>
+</html>
+________________________________________
