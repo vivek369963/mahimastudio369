@@ -1,1 +1,1 @@
-# mahimastudio369
+# mahimastudio369.ai
